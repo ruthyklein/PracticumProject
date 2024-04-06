@@ -1,0 +1,32 @@
+.table-container {
+    width: 80%;
+    overflow: auto;
+    margin: 2rem auto;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  .mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td,
+  th {
+    width: 25%;
+  }
+  
+  .actions-cell {
+    white-space: nowrap;
+  }
+  
+  .actions-cell div {
+    display: flex;
+    align-items: center;
+  }
+  
+  :host ::ng-deep .mat-mdc-paginator-container {
+    justify-content: space-between;
+  }

@@ -1,0 +1,44 @@
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+.example-container {
+  position: absolute;
+  height: 100%;
+  z-index: 200;
+}
+.logo {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.sidenav {
+  width: 300px;
+  overflow-y: auto;
+}
+
+.close-button {
+  margin-right: 0px;
+}
+
+.menu-button {
+  width: 100%;
+  text-align: left;
+  padding: 15px 20px;
+  background-color: transparent;
+  border: none;
+  color:  #3f51b5;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.menu-button:hover {
+  background-color: #3f51b5;
+  color:  #ffffff;
+
+}
+
+.menu-button span {
+  margin-left: 10px;
+}

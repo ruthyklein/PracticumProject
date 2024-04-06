@@ -1,0 +1,39 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+        (click)="toggleSidebar()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span class="logo">Employees App</span>
+    <span class="example-spacer"></span>
+    <a href="https://github.com/ruthyklein/PracticumProject" target="_blank">
+        <button mat-fab extended color="primary">
+            <mat-icon>
+
+                <i class="fa-brands fa-github " style="color: #ffffff; font-size: 25px;">
+                </i>
+            </mat-icon>
+            GitHub
+        </button>
+    </a>
+</mat-toolbar>
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="side" [opened]="isMenuOpened" class="sidenav">
+        <button mat-icon-button color="primary" (click)="toggleSidebar()" class="close-button">
+            <mat-icon>close</mat-icon>
+        </button>
+        <button mat-menu-item color="primary" (click)="openAddDialog()" class="menu-button">
+            <mat-icon>person_add</mat-icon>
+            <span>Add Employee</span>
+        </button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item color="primary" (click)="openAddPositionDialog()" class="menu-button">
+            <i class="fa-solid fa-user-plus" style="font-size: 20px;"></i>
+            <span>Add Position</span>
+        </button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item color="primary" (click)="exportToExcel()" class="menu-button">
+            <mat-icon>file_download</mat-icon>
+            <span>Export To Excel</span>
+        </button>
+    </mat-sidenav>
+</mat-sidenav-container>
