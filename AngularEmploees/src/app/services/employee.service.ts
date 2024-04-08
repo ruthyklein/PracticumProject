@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Observable, map, tap } from 'rxjs';
 import { Employee } from '../models/employee.model';
 
@@ -7,13 +7,15 @@ import { Employee } from '../models/employee.model';
 @Injectable({
   providedIn: 'root'
 })
-export class EmployeeService {
+export class EmployeeService  {
 
   private apiUrl = "https://localhost:7087/api/Employee";
-  employees: Observable<Employee[]> = new Observable<Employee[]>();
 
-  constructor(private http: HttpClient) { }
+   employees: Observable<Employee[]> = new Observable<Employee[]>();
 
+  constructor(private http: HttpClient) {
+    //this.employees = this.getEmployees();
+  }
   getEmployees(): Observable<Employee[]> {
     return this.http.get<Employee[]>(this.apiUrl);
   }
@@ -78,5 +80,58 @@ export class EmployeeService {
       })
     );
   }
-  
 }
+/*import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable, tap } from 'rxjs';
+import { Employee } from '../models/employee.model';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class EmployeeService {
+  private apiUrl = "https://localhost:7087/api/Employee";
+  public employees: Observable<Employee[]>;
+
+  constructor(private http: HttpClient) {
+    this.employees = this.fetchEmployeesFromServer();
+  }
+
+  private fetchEmployeesFromServer(): Observable<Employee[]> {
+    return this.http.get<Employee[]>(this.apiUrl);
+  }
+
+  getEmployees(): Observable<Employee[]> {
+    return this.employees;
+  }
+
+  // פונקציה זו מוסיפה עובד חדש לשרת ואז מעדכנת את המערך המקומי
+  addEmployee(employee: Employee): Observable<Employee> {
+    return this.http.post<Employee>(this.apiUrl, employee).pipe(
+      tap(newEmployee => {
+        // קריאה לפונקציה הפרטית שמתעדכנת מהשרת
+        this.employees = this.fetchEmployeesFromServer();
+      })
+    );
+  }
+
+  // פונקציה זו מעדכנת עובד קיים בשרת ואז מעדכנת את המערך המקומי
+  updateEmployee(employee: Employee): Observable<Employee> {
+    return this.http.put<Employee>(`${this.apiUrl}/${employee.id}`, employee).pipe(
+      tap(updatedEmployee => {
+        // קריאה לפונקציה הפרטית שמתעדכנת מהשרת
+        this.employees = this.fetchEmployeesFromServer();
+      })
+    );
+  }
+
+  // פונקציה זו מוחקת עובד מהשרת ואז מעדכנת את המערך המקומי
+  deleteEmployee(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`).pipe(
+      tap(() => {
+        // קריאה לפונקציה הפרטית שמתעדכנת מהשרת
+        this.employees = this.fetchEmployeesFromServer();
+      })
+    );
+  }
+}*/

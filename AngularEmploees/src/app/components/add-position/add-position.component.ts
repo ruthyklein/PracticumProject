@@ -30,30 +30,30 @@ export class AddPositionComponent  implements OnInit {
 
   initForm(): void {
     this.positionForm = this.fb.group({
+      id: [''],
       name: ['', Validators.required],
     });
   }
 
-  submit(): void {
-    if (this.positionForm.valid) {
+   submit(): void {
+     if (this.positionForm.valid) {
       console.log("try to add position:", this.positionForm.value);
       
-      this.positionService.addPosition(this.positionForm.value).subscribe(
-        (addedPosition: Position) => {
-          console.log('Position added successfully:', addedPosition);
-          this.dialogRef.close(true);
-        },
-        error => {
-          console.error('Error adding position:', error);
-          // Handle error here
-        }
-      );
-    } else {
-      // Mark all fields as touched to display validation errors
-      this.positionForm.markAllAsTouched();
-    }
-  }
-
+     this.positionService.addPosition(this.positionForm.value).subscribe(
+         (addedPosition: Position) => {
+           console.log('Position added successfully:', addedPosition);
+           this.dialogRef.close(true);
+         },
+         error => {
+           console.error('Error adding position:', error);
+           // Handle error here
+         }
+       );
+     } else {
+       // Mark all fields as touched to display validation errors
+       this.positionForm.markAllAsTouched();
+     }
+   }
   cancel(): void {
     this.dialogRef.close();
   }

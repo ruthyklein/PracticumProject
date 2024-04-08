@@ -24,25 +24,25 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 @Component({
   selector: 'app-edit-employee',
   standalone: true,
-    imports: [
-      CommonModule,
-      MatFormFieldModule,
-      MatInputModule,
-      MatTableModule,
-      MatSortModule,
-      MatPaginatorModule,
-      MatButtonModule,
-      MatIconModule,
-      MatDialogModule,
-      MatSelectModule,
-      MatTooltipModule,
-      MatToolbarModule,
-      ReactiveFormsModule,
-      MatCheckboxModule,
-      MatDatepickerModule,
-      MatSlideToggleModule,
-      MatExpansionModule  
-    ],
+  imports: [
+    CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDialogModule,
+    MatSelectModule,
+    MatTooltipModule,
+    MatToolbarModule,
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatSlideToggleModule,
+    MatExpansionModule
+  ],
   templateUrl: './edit-employee.component.html',
   styleUrl: './edit-employee.component.scss'
 })
@@ -62,15 +62,24 @@ export class EditEmployeeComponent implements OnInit {
     const employee = this.data.employee;
     this.initializeForm(employee);
     this.loadPositions();
+    this.employeeForm.get('dateOfBirth').valueChanges.subscribe(() => {
+      this.validateAge();
+    });
+
+    this.employeeForm.get('startOfWorkDate').valueChanges.subscribe(() => {
+      this.validateStartOfWorkDate();
+    });
+
+    this.employeeForm.get('positionList').valueChanges.subscribe(() => {
+      this.validateEntryDates();
+    });
   }
-
-
 
   initializeForm(employee: Employee): void {
     this.employeeForm = this.fb.group({
-      idNumber: [employee.idNumber, Validators.required],
-      firstName: [employee.firstName, Validators.required],
-      lastName: [employee.lastName, Validators.required],
+      idNumber: [employee.idNumber,[Validators.required, Validators.pattern(/^\d{9}$/)]],
+      firstName: [employee.firstName, [Validators.required, Validators.pattern(/^[\p{L}\s]{2,}$/u)]],
+      lastName: [employee.lastName, [Validators.required, Validators.pattern(/^[\p{L}\s]{2,}$/u)]],
       gender: [employee.gender, Validators.required],
       dateOfBirth: [employee.dateOfBirth, Validators.required],
       startOfWorkDate: [employee.startOfWorkDate, Validators.required],
@@ -131,7 +140,45 @@ export class EditEmployeeComponent implements OnInit {
     const selectedPositions = this.employeeForm.value.positionList.map((pos: any) => pos.positionId);
     return selectedPositions.includes(positionId) && selectedPositions.indexOf(positionId) !== index;
   }
+  validateAge(): void {
+    if (this.employeeForm.get('dateOfBirth').valid) {
+      const birthDate: Date = this.employeeForm.get('dateOfBirth').value;
+      const eighteenYearsAgo = new Date();
+      eighteenYearsAgo.setFullYear(eighteenYearsAgo.getFullYear() - 18);
 
+      if (birthDate > eighteenYearsAgo) {
+        this.employeeForm.get('dateOfBirth').setErrors({ overAge: true });
+      } else {
+        this.employeeForm.get('dateOfBirth').setErrors(null);
+      }
+    }
+  }
+
+  validateStartOfWorkDate(): void {
+    const startOfWorkDate: Date = this.employeeForm.get('startOfWorkDate').value;
+    const dateOfBirth: Date = this.employeeForm.get('dateOfBirth').value;
+  
+    if (startOfWorkDate < dateOfBirth) {
+      this.employeeForm.get('startOfWorkDate').setErrors({ beforeDateOfBirth: true });
+    } else {
+      this.employeeForm.get('startOfWorkDate').setErrors(null);
+    }
+  }
+  
+  validateEntryDates(): void {
+    const startOfWorkDate: Date = this.employeeForm.get('startOfWorkDate').value;
+    this.positionsFormArray.controls.forEach((control: FormGroup) => {
+      const entryDate: Date = control.get('entryDate').value;
+  
+      if (startOfWorkDate && entryDate && entryDate < startOfWorkDate) {
+        control.get('entryDate').setErrors({ entryDateBeforeWorkDate: true });
+      } else {
+        control.get('entryDate').setErrors(null);
+      }
+    });
+  }
+  
+  
   submit(): void {
     if (this.employeeForm.valid) {
       const formData = {

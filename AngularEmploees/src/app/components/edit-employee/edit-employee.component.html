@@ -7,6 +7,7 @@
         <mat-label>ID Number</mat-label>
         <input matInput formControlName="idNumber" placeholder="Enter ID Number">
         <mat-error *ngIf="employeeForm.get('idNumber').hasError('required')">ID Number is required</mat-error>
+        <mat-error *ngIf="employeeForm.get('idNumber').hasError('pattern')">ID Number must contain 9 digits</mat-error>
       </mat-form-field>
 
       <!-- First Name -->
@@ -14,6 +15,7 @@
         <mat-label>First Name</mat-label>
         <input matInput formControlName="firstName" placeholder="Enter First Name">
         <mat-error *ngIf="employeeForm.get('firstName').hasError('required')">First Name is required</mat-error>
+        <mat-error *ngIf="employeeForm.get('firstName').hasError('pattern')">First Name must contain only letters and have minimum length of 2</mat-error>
       </mat-form-field>
 
       <!-- Last Name -->
@@ -21,6 +23,7 @@
         <mat-label>Last Name</mat-label>
         <input matInput formControlName="lastName" placeholder="Enter Last Name">
         <mat-error *ngIf="employeeForm.get('lastName').hasError('required')">Last Name is required</mat-error>
+        <mat-error *ngIf="employeeForm.get('lastName').hasError('pattern')">Last Name must contain only letters and have minimum length of 2</mat-error>
       </mat-form-field>
 
       <!-- Gender -->
@@ -39,8 +42,8 @@
         <input matInput [matDatepicker]="dateOfBirth" formControlName="dateOfBirth" placeholder="Enter Date of Birth">
         <mat-datepicker-toggle matSuffix [for]="dateOfBirth"></mat-datepicker-toggle>
         <mat-datepicker #dateOfBirth></mat-datepicker>
-        <mat-error *ngIf="employeeForm.get('dateOfBirth').hasError('required')">Date of Birth is
-          required</mat-error>
+        <mat-error *ngIf="employeeForm.get('dateOfBirth').hasError('required')">Date of Birth is required</mat-error>
+        <mat-error *ngIf="employeeForm.get('dateOfBirth').hasError('overAge')">Employee must be over 18 years old</mat-error>
       </mat-form-field>
 
       <!-- Start of Work Date -->
@@ -50,8 +53,8 @@
           placeholder="Enter Start of Work Date">
         <mat-datepicker-toggle matSuffix [for]="startOfWorkDate"></mat-datepicker-toggle>
         <mat-datepicker #startOfWorkDate></mat-datepicker>
-        <mat-error *ngIf="employeeForm.get('startOfWorkDate').hasError('required')">Start of Work Date is
-          required</mat-error>
+        <mat-error *ngIf="employeeForm.get('startOfWorkDate').hasError('required')">Start of Work Date is required</mat-error>
+        <mat-error *ngIf="employeeForm.get('startOfWorkDate').hasError('beforeDateOfBirth')">Start of Work Date cannot be before Date of Birth</mat-error>
       </mat-form-field>
       <mat-accordion formArrayName="positionList">
         <button mat-raised-button color="primary" (click)="addPositionControl()">Add
@@ -73,10 +76,7 @@
                   <mat-option *ngFor="let pos of positionList" [value]="pos.id"
                     [disabled]="isPositionDisabled(pos.id, i)">{{ pos.name }}</mat-option>
                 </mat-select>
-
-
-                <mat-error *ngIf="positionsFormArray.controls[i].get('positionId').hasError('required')">Position
-                  is required</mat-error>
+                <mat-error *ngIf="positionsFormArray.controls[i].get('positionId').hasError('required')">Position is required</mat-error>
               </mat-form-field>
 
               <mat-form-field>
@@ -84,8 +84,8 @@
                 <input matInput [matDatepicker]="entryDate" formControlName="entryDate" placeholder="Enter Entry Date">
                 <mat-datepicker-toggle matSuffix [for]="entryDate"></mat-datepicker-toggle>
                 <mat-datepicker #entryDate></mat-datepicker>
-                <mat-error *ngIf="positionsFormArray.controls[i].get('entryDate').hasError('required')">Entry
-                  Date is required</mat-error>
+                <mat-error *ngIf="positionsFormArray.controls[i].get('entryDate').hasError('required')">Entry Date is required</mat-error>
+                <mat-error *ngIf="positionsFormArray.controls[i].get('entryDate').hasError('entryDateBeforeWorkDate')">Entry Date must be after Start of Work Date</mat-error>
               </mat-form-field>
 
               <mat-slide-toggle formControlName="isAdministrative" color="primary">Administrative</mat-slide-toggle>
@@ -96,7 +96,7 @@
     </mat-dialog-content>
     <mat-dialog-actions>
       <button mat-button color="warn" (click)="cancel()">Cancel</button>
-      <button mat-button color="primary">Submit</button>
+      <button mat-button color="primary" [disabled]="!employeeForm.valid" type="submit">Submit</button>
     </mat-dialog-actions>
   </form>
  
