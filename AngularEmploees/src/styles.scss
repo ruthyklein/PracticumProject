@@ -2,7 +2,15 @@
 //@import "../node_modules/pmd-angular-bootstrap/assets/scss/propeller.scss";
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+//background-color: rgba(55, 21, 87, 0.253);
+ }
 a {
     text-decoration: none;
+    
 }
+// .icon{
+//     color: #0002ff !important;
+//   }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

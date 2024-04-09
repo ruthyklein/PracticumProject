@@ -1,20 +1,54 @@
 
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
-  
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 24px;
+  width: 100%; 
+}
+
+mat-form-field {
+  width: calc(50% - 20px); 
+  margin-right: 20px; 
+  margin-bottom: 20px;
+}
+
+mat-form-field input {
+  width: 100%; 
+  align-items: center;
+}
+
+mat-form-field mat-select {
+  width: 100%;
+}
+
+mat-form-field mat-slide-toggle {
+  margin-top: 16px;
+}
+
+mat-dialog-content {
+  display: flex;
+  flex-wrap: wrap; // כדי שהאלמנטים ישופעו במערך כאשר יש פחות מקום
+  justify-content: center; // כדי שהאלמנטים יישרו למרכז הדף
+}
+
+mat-dialog-actions {
+  width: 100%; // להקטין את המרחק בין הכפתורים והתצוגה במקום המרכזי
+}
+
+@media (max-width: 600px) { // מדיה קוורי למכשירים ניידים
+  .form-container {
+    justify-content: flex-start; // כדי שהשדות יישרו לשמאל במובייל
   }
-  
+
   mat-form-field {
-    width: 100%;
-    margin-bottom: 20px;
-  
-    input {
-      width: 100%;
-    }
-  
-    mat-select {
-      width: 100%;
-    }
+    width: calc(100% - 20px); // רוחב מלא במובייל
+    margin-right: 0; // אין מרווח בין השדות
   }
+}

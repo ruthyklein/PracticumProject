@@ -1,7 +1,7 @@
 <div style="display: flex; flex-direction: column; align-items: center;">
   <h2>Edit Employee</h2>
   <form [formGroup]="employeeForm" (ngSubmit)="submit()">
-    <mat-dialog-content style="width: 400px;">
+    <mat-dialog-content >
       <!-- ID Number -->
       <mat-form-field>
         <mat-label>ID Number</mat-label>
@@ -57,8 +57,9 @@
         <mat-error *ngIf="employeeForm.get('startOfWorkDate').hasError('beforeDateOfBirth')">Start of Work Date cannot be before Date of Birth</mat-error>
       </mat-form-field>
       <mat-accordion formArrayName="positionList">
+        <mat-dialog-actions style="justify-content: center;">
         <button mat-raised-button color="primary" (click)="addPositionControl()">Add
-          Position<mat-icon>plus_one</mat-icon></button>
+          Position<mat-icon>plus_one</mat-icon></button></mat-dialog-actions>
         <mat-expansion-panel *ngFor="let position of positionsFormArray.controls; let i = index">
           <mat-expansion-panel-header>
             <mat-panel-title>
@@ -94,7 +95,7 @@
         </mat-expansion-panel>
       </mat-accordion>
     </mat-dialog-content>
-    <mat-dialog-actions>
+    <mat-dialog-actions  style="justify-content: end;" >
       <button mat-button color="warn" (click)="cancel()">Cancel</button>
       <button mat-button color="primary" [disabled]="!employeeForm.valid" type="submit">Submit</button>
     </mat-dialog-actions>

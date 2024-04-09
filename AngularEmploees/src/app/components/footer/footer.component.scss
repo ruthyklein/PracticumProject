@@ -1,0 +1,30 @@
+/* footer.component.scss */
+
+.mat-toolbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #3f51b5; /* צבע רקע */
+    color: #ffffff; /* צבע טקסט */
+    font-size: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* רווחים */
+  }
+  
+  .mat-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* מרווח מימין */
+  }
+  
+  .mat-icon a {
+    color: inherit; /* השתמש בצבע האב */
+    text-decoration: none; /* הסרת קו תחתון מהקישור */
+  }
+  
+  .mat-icon a:hover {
+    text-decoration: underline; /* הצגת קו תחתון בעת העברת העכבר מעל הקישור */
+  }
+  

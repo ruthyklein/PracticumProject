@@ -1,15 +1,19 @@
 import { Routes } from '@angular/router';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { EmployeesTableComponent } from './components/employees-table/employees-table.component';
+import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
+import { EditEmployeeComponent } from './components/edit-employee/edit-employee.component';
+import { AddPositionComponent } from './components/add-position/add-position.component';
 
 export const routes: Routes = [
-    // { path: '', redirectTo: 'home', pathMatch: 'full' },
-    // { path: 'home', loadComponent: () => import('./components/home-page/home-page.component').then(c => c.HomePageComponent) },
-    // { path: 'employee', loadChildren: () => import('./components/recipe/recipe.module').then(c => c.RecipeModule) },
-    // { path: '**', component: NotFoundComponent }
+    { path: '**', component: HomepageComponent },
+    { path: 'employees', component: EmployeesTableComponent },
+    { path: 'addEmployee', component: AddEmployeeComponent },
+    { path: 'editEmployee/:id', component: EditEmployeeComponent },
+    { path: 'addPositionEmployee/:id', component: AddPositionComponent },
+        //{ path: '**', component:NotFoundComponent },
+    { path: '', redirectTo: 'employees', pathMatch: 'full' },
 
 
-    { path: '', redirectTo: 'employee', pathMatch: 'full' },
-    // { path: 'employee', loadChildren: () => import('./components/employee/employee.module').then(m => m.EmployeeModule) },
-    // { path: 'position', loadChildren: () => import('./components/position/position.module').then(m => m.PositionModule) }
-    { path: '**', component: HomepageComponent }];
 
+];

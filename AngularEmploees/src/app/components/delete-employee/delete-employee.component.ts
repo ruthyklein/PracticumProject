@@ -3,6 +3,7 @@ import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/materia
 import { Employee } from '../../models/employee.model';
 import { EmployeeService } from '../../services/employee.service';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-delete-employee',
@@ -20,20 +21,36 @@ export class DeleteEmployeeComponent  {
   constructor(
     public dialogRef: MatDialogRef<DeleteEmployeeComponent>,
     @Inject(MAT_DIALOG_DATA) data: { employee: Employee },
-    private employeeService: EmployeeService
-  ) { this.employee = data.employee; }
+    private employeeService: EmployeeService,
+    private snackBar: MatSnackBar
+  ) {
+    this.employee = data.employee;
+  }
 
   onConfirmDelete(): void {
     this.employeeService.deleteEmployee(this.employee.id).subscribe(() => {
-      console.log("Employee deleted successfully");
+      this.openSnackBar('Employee deleted successfully');
       this.dialogRef.close(true);
     }, error => {
-      console.error("Error deleting employee:", error);
+      this.openErrorSnackBar('Error deleting employee: ' + error.message);
     });
   }
 
   onCancel(): void {
     this.dialogRef.close(false);
   }
-}
 
+  openSnackBar(message: string): void {
+    this.snackBar.open(message, undefined, {
+      duration: 2000,
+      panelClass: ['custom-snackbar']
+    });
+  }
+
+  openErrorSnackBar(message: string): void {
+    this.snackBar.open(message, 'Close', {
+      duration: 5000,
+      panelClass: ['error-snackbar']
+    });
+  }
+}

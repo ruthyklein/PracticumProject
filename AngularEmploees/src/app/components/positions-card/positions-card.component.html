@@ -1,0 +1,24 @@
+<div class="position-list-container">
+    <h2>Position List</h2>
+    <mat-dialog-content style="width:1500;">
+    <div class="positions-container">
+        <div class="card-container">
+          <mat-card class="card" *ngFor="let position of positions; let i = index">
+            <mat-card-content>
+              <div class="card-content">
+                <h3>{{ position.name }}</h3>
+                <mat-divider></mat-divider>
+                <mat-icon class="employee-icon" *ngIf="icons[i]">{{ icons[i] }}</mat-icon>
+                <mat-icon class="employee-icon" *ngIf="!icons[i]">supervisor_account
+                </mat-icon>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-raised-button class="custom-button" color="primary" (click)="toAddposition()">To Add Position</button>
+      </mat-dialog-actions>
+  </div>
+  

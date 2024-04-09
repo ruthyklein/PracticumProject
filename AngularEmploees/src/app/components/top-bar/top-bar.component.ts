@@ -1,75 +1,3 @@
-/*import { Component } from '@angular/core';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { FormsModule } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
-import { ExcelService } from '../../services/excel.service';
-import { Employee } from '../../models/employee.model';
-import { EmployeeService } from '../../services/employee.service';
-import { AddEmployeeComponent } from '../employee/add-employee/add-employee.component';
-import { CommonModule } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { EmployeesTableComponent } from '../employee/employees-table/employees-table.component';
-import { MatDividerModule } from '@angular/material/divider';
-import { DatePipe } from '@angular/common';
-import { MatListModule } from '@angular/material/list';
-@Component({
-  selector: 'app-top-bar',
-  standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatButtonModule,
-    EmployeesTableComponent,
-    MatListModule,
-    MatDividerModule,
-    DatePipe
-
-  ],
-  templateUrl: './top-bar.component.html',
-  styleUrl: './top-bar.component.scss'
-})
-export class TopBarComponent {
-
-
-  isMenuOpened: boolean = false;
-
-  toggleSidebar() {
-    this.isMenuOpened = !this.isMenuOpened;
-  }
-  employees: Employee[] = [];
-
-  constructor(private dialog: MatDialog, private excelService: ExcelService, private employeeService: EmployeeService) {
-
-  }
-  openAddDialog() {
-    this.dialog.open(AddEmployeeComponent, { width: '400px' })
-  }
-  exportToExcel() {
-    this.employeeService.getEmployees().subscribe((employees: Employee[]) => {
-      const currentDateTime: string = new Date().toISOString().slice(0, 16).replace(/[-T:]/g, '').replace(/(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})/, '$3-$2-$1_$4$5');
-      const fileName: string = `employee_data_${currentDateTime}`;
-      this.excelService.exportToExcel(employees, fileName);
-    });
-  }
-
-  getEmployees(): void {
-    this.employeeService.getEmployees().subscribe({
-      next: (res: Employee[]) => {
-        this.employees = res;
-        console.log("Employees fetched successfully:");
-        console.log(this.employees);
-      },
-      error: (err) => {
-        console.log(err);
-      }
-    });
-  }
-}*/
 
 import { Component, OnInit } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -89,6 +17,8 @@ import { DatePipe } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 import { AddPositionComponent } from '../add-position/add-position.component';
+import { PositionsCardComponent } from '../positions-card/positions-card.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-top-bar',
@@ -105,6 +35,7 @@ import { AddPositionComponent } from '../add-position/add-position.component';
     MatDividerModule,
     DatePipe,
     MatMenuModule,
+    MatTooltipModule,
 
   ],
   templateUrl: './top-bar.component.html',
@@ -130,9 +61,11 @@ export class TopBarComponent implements OnInit {
   }
 
   openAddDialog() {
-    this.dialog.open(AddEmployeeComponent, { width: '400px' });
+    this.dialog.open(AddEmployeeComponent ,{ width: '800px' });
   }
-
+  openPositionCardsDialog(){
+    this.dialog.open(PositionsCardComponent,{ width: '800' });
+  }
   exportToExcel() {
     this.employeeService.getEmployees().subscribe((employees: Employee[]) => {
       const currentDateTime = new Date().toISOString()
@@ -145,7 +78,7 @@ export class TopBarComponent implements OnInit {
   }
 
   openAddPositionDialog() {
-    this.dialog.open(AddPositionComponent, { width: '400px' });
+    this.dialog.open(AddPositionComponent, { width: '800' });
   }
   getEmployees(): void {
     this.employeeService.getEmployees().subscribe({

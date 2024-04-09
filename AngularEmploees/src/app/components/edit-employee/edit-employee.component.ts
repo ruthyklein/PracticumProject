@@ -20,6 +20,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-edit-employee',
@@ -55,8 +56,9 @@ export class EditEmployeeComponent implements OnInit {
     private dialogRef: MatDialogRef<EditEmployeeComponent>,
     private employeeService: EmployeeService,
     private positionService: PositionService,
-    @Inject(MAT_DIALOG_DATA) public data: { employee: Employee }
-  ) { }
+    @Inject(MAT_DIALOG_DATA) public data: { employee: Employee },
+    private snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     const employee = this.data.employee;
@@ -98,7 +100,7 @@ export class EditEmployeeComponent implements OnInit {
         this.positionList = positionList;
       },
       error => {
-        console.error('Error loading positions:', error);
+        this.openSnackBar('Error loading positions: ' + error.message);
       }
     );
   }
@@ -121,14 +123,12 @@ export class EditEmployeeComponent implements OnInit {
 
   patchPositionValue(employee: Employee): void {
     const positionsFormArray = this.employeeForm.get('positionList') as FormArray;
-    console.log(positionsFormArray, 'positionsFormArray  before pushing');
     employee.positionList.forEach(position => {
       positionsFormArray.push(this.fb.group({
         positionId: [position.position.id, Validators.required],
         isAdministrative: [position.isAdministrative, Validators.required],
         entryDate: [position.entryDate, Validators.required]
       }));
-      console.log(positionsFormArray, 'positionsFormArray  after pushing');
     });
   }
 
@@ -140,6 +140,7 @@ export class EditEmployeeComponent implements OnInit {
     const selectedPositions = this.employeeForm.value.positionList.map((pos: any) => pos.positionId);
     return selectedPositions.includes(positionId) && selectedPositions.indexOf(positionId) !== index;
   }
+  
   validateAge(): void {
     if (this.employeeForm.get('dateOfBirth').valid) {
       const birthDate: Date = this.employeeForm.get('dateOfBirth').value;
@@ -178,7 +179,6 @@ export class EditEmployeeComponent implements OnInit {
     });
   }
   
-  
   submit(): void {
     if (this.employeeForm.valid) {
       const formData = {
@@ -197,18 +197,16 @@ export class EditEmployeeComponent implements OnInit {
     }
   }
 
-
   updateEmployee(formData: any): void {
     const employeeId = this.data.employee.id;
     formData.id = employeeId;
     this.employeeService.updateEmployee(formData).subscribe(
       response => {
-        console.log(formData);
-        console.log('Employee updated successfully:', response);
+        this.openSnackBar('Employee updated successfully');
         this.dialogRef.close(true);
       },
       error => {
-        console.error('Failed to update employee:', error);
+        this.openErrorSnackBar('Failed to update employee: ' + error.message);
       }
     );
   }
@@ -219,5 +217,19 @@ export class EditEmployeeComponent implements OnInit {
 
   comparePositions(o1: Position, o2: Position): boolean {
     return o1 && o2 ? o1.id === o2.id : o1 === o2;
+  }
+
+  openSnackBar(message: string): void {
+    this.snackBar.open(message, undefined, {
+      duration: 2000,
+      panelClass: ['custom-snackbar']
+    });
+  }
+
+  openErrorSnackBar(message: string): void {
+    this.snackBar.open(message, 'Close', {
+      duration: 5000,
+      panelClass: ['error-snackbar']
+    });
   }
 }
