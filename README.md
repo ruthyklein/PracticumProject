@@ -5,7 +5,14 @@ Welcome to the Employee Management System project! This project aims to provide 
 ## Project Overview
 
 The Employee Management System is designed to streamline employee management processes within organizations. It aims to solve the challenges of efficiently organizing and maintaining employee data, enhancing productivity, and ensuring data integrity. By adopting a layered architecture model, the project emphasizes better organization and maintainability, enabling seamless scaling and future enhancements.
+## Table of Contents (Optional)
 
+If your README is long, add a table of contents to make it easy for users to find what they need.
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
 ## Project Structure
 
 The project follows a layered architecture model for better organization and maintainability:
@@ -25,7 +32,7 @@ The Employee Management System offers the following features:
 
 - **Client-side**: Angular
 - **Server-side**: .NET 
-- **Database**: SQL
+- **Database**: SQL Server
 - **Cloud Platform**: Google Cloud Platform or AWS
 
 ## Getting Started
@@ -35,47 +42,42 @@ The Employee Management System offers the following features:
     `https://github.com/ruthyklein/PracticumProject`
     ```
     &#x202b;
-   
-3. Navigate to the Project Directory.
+2. Navigate to the Project Directory.
    
 ### Backend
 
-1. Access Backend Directory: `/EmployeesSever`.
-2. Open Solution File: Launch in Visual Studio.
-3. Install Necessary NuGet Packages.
-4. Open Package Manager Console.
-5. Initialize Database, Run the following command :
+- Access Backend Directory: `/EmployeesSever`.
+- Open Solution File: Launch in Visual Studio.
+- Install Necessary **NuGet Packages**.
+- Open **Package Manager Console**.
+- Initialize Database, Run the following command :
    ```
    `add-migration init`
    
    `update-database`
    ```
    &#x202b;
-   
-6. Build and Run the Backend Application.
+- Build and Run the Backend Application.
 
 ### Frontend
 
-1. Go to Frontend Directory: `/AngularEmploees`.
-2. Install Dependencies, Run:
+- Go to Frontend Directory: `/AngularEmploees`.
+- Install Dependencies, Run:
     ```
    `npm install`
     ```
    &#x202b;
-
-3. Start the Development Server, Execute:
+- Start the Development Server, Execute:
    ```
    `ng serve`
    ```
    &#x202b;
-   
-5. Run the application locally, Visit:
+- Run the application locally, Visit:
     ```
    `http://localhost:4200`
     ```
     &#x202b;
    
-
 ### Company Management
 
 - Users are directed to a dashboard focused on the associated company.
@@ -108,3 +110,10 @@ This project was created by Ruth Klein as part of a screening practicum. We woul
 
 ## Contact:
 For more help or questions, see the project documentation or contact the development team at r0583226266@gmail.com Enjoy using the employee management system!
+
+
+
+
+
+
+
