@@ -1,0 +1,48 @@
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 24px;
+  width: 100%;
+}
+
+mat-form-field {
+  width: calc(50% - 20px);
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+mat-form-field input {
+  width: 100%;
+}
+
+mat-form-field mat-select {
+  width: 100%;
+}
+
+mat-form-field mat-slide-toggle {
+  margin-top: 16px;
+}
+
+mat-dialog-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+mat-dialog-actions {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .form-container {
+    justify-content: flex-start;
+  }
+
+  mat-form-field {
+    width: calc(100% - 20px);
+    margin-right: 0;
+  }
+
+}

@@ -1,16 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
-//@import "../node_modules/pmd-angular-bootstrap/assets/scss/propeller.scss";
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
-//background-color: rgba(55, 21, 87, 0.253);
- }
 a {
     text-decoration: none;
-    
+    cursor: pointer;
 }
-// .icon{
-//     color: #0002ff !important;
-//   }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

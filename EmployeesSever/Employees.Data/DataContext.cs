@@ -9,7 +9,6 @@ namespace Employees.Data
     {
         public DbSet<Position> PositionList { get; set; }
         public DbSet<Employee> EmployeeList { get; set; }
-        public DbSet<User> UserList { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

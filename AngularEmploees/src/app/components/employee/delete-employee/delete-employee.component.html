@@ -1,0 +1,10 @@
+<div style="display: flex; flex-direction: column; align-items: center;">
+  <h2 mat-dialog-title>Confirm Employee Deletion</h2>
+  <mat-dialog-content >
+    <p>Are you sure you want to delete {{ employee.firstName }} {{ employee.lastName }}?</p>
+  </mat-dialog-content>
+  <mat-dialog-actions style="align-self: flex-end; margin-top: 20px;">
+    <button mat-button color="primary" (click)="onCancel()">Cancel</button>
+    <button mat-button color="warn" (click)="onConfirmDelete()">Delete</button>
+  </mat-dialog-actions>
+</div>

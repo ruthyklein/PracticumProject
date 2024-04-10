@@ -1,4 +1,3 @@
-using Employees.Api.Middlewares;
 using Employees.Core.Mapping;
 using Employees.Core.Repositories;
 using Employees.Core.Services;
@@ -56,37 +55,16 @@ builder.Services.AddCors(options =>
 //Repository injection
 builder.Services.AddScoped<IPositionRepository, PositionRepository>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 //Serivce injection
 builder.Services.AddScoped<IPositionService, PositionService>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
-builder.Services.AddScoped<IUserService, UserService>();
 
 //DataContext injection
 builder.Services.AddDbContext<DataContext>();
 
 //AutoMapper injection
 builder.Services.AddAutoMapper(typeof(MappingProfile), typeof(PostModelsMappingProfile));
-
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-})
-    .AddJwtBearer(options =>
-    {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            ValidIssuer = builder.Configuration["JWT:Issuer"],
-            ValidAudience = builder.Configuration["JWT:Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"]))
-        };
-    });
 
 var app = builder.Build();
 
@@ -103,7 +81,6 @@ app.UseAuthentication();
 
 app.UseAuthorization();
 
-//app.UseMiddleware<ValidationMiddleware>(); 
 
 app.UseCors(policy);
 

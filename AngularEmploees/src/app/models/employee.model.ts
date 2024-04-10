@@ -1,5 +1,4 @@
 import { EmployeePosition } from './employeePosition.model'
-
 export class Employee {
   id: number;
   idNumber: string;

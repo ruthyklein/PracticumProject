@@ -26,7 +26,7 @@ export class ExcelService {
         IsAdministrative: positionData.isAdministrative
       }));
     });
-  
+
     const updatedFlattenedData = [];
     flattenedData.forEach(item => {
       const positions = item.PositionName.split(',');
@@ -41,14 +41,14 @@ export class ExcelService {
         updatedFlattenedData.push(item);
       }
     });
-  
+
     const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(updatedFlattenedData);
     const workbook: XLSX.WorkBook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
-  
+
     const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
     this.saveExcelFile(excelBuffer, fileName);
   }
-  
+
   saveExcelFile(buffer: any, fileName: string) {
     const data: Blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
     const url: string = window.URL.createObjectURL(data);

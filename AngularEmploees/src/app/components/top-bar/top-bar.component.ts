@@ -1,24 +1,23 @@
-
 import { Component, OnInit } from '@angular/core';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { EmployeeService } from '../../services/employee.service';
 import { ExcelService } from '../../services/excel.service';
 import { Employee } from '../../models/employee.model';
-import { EmployeeService } from '../../services/employee.service';
-import { AddEmployeeComponent } from '../add-employee/add-employee.component';
-import { CommonModule } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { EmployeesTableComponent } from '../employees-table/employees-table.component';
-import { MatDividerModule } from '@angular/material/divider';
+import { AddEmployeeComponent } from '../employee/add-employee/add-employee.component';
+import { EmployeesTableComponent } from '../employee/employees-table/employees-table.component';
 import { DatePipe } from '@angular/common';
-import { MatListModule } from '@angular/material/list';
-import {MatMenuModule} from '@angular/material/menu';
-import { AddPositionComponent } from '../add-position/add-position.component';
-import { PositionsCardComponent } from '../positions-card/positions-card.component';
-import { MatTooltipModule } from '@angular/material/tooltip';
+import { AddPositionComponent } from '../position/add-position/add-position.component';
+import { PositionsCardComponent } from '../position/positions-card/positions-card.component';
 
 @Component({
   selector: 'app-top-bar',
@@ -30,7 +29,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,
-    EmployeesTableComponent, // Assuming EmployeesTableComponent is a standalone component
+    EmployeesTableComponent, 
     MatListModule,
     MatDividerModule,
     DatePipe,
