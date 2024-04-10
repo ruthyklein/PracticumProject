@@ -36,9 +36,14 @@ The Employee Management System offers the following features:
 ### Frontend
 
 1. **Go to Frontend Directory**: `/AngularEmploees`.
-2. **Install Dependencies**: Run `npm install`.
-3. **Start the Development Server**:
-4. Execute
+2. **Install Dependencies**:
+Run
+  ```
+`npm install`
+```
+  &#x202b;
+4. **Start the Development Server**:
+Execute
  ```
 `ng serve`
  ```
