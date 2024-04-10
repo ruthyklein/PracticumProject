@@ -24,7 +24,7 @@ The Employee Management System offers the following features:
 ## Technologies Used
 
 - **Client-side**: React (or Angular)
-- **Server-side**: .NET 6
+- **Server-side**: .NET 
 - **Database**: SQL
 - **Cloud Platform**: Google Cloud Platform or AWS
 
@@ -38,11 +38,12 @@ The Employee Management System offers the following features:
 1. **Go to Frontend Directory**: `/AngularEmploees`.
 2. **Install Dependencies**: Run `npm install`.
 3. **Start the Development Server**:
-4. ```
+4. 
+```
 Execute
 $ `ng serve`;
 ```
-Execute `ng serve`.
+&#x202b;
 5. **Run the application locally**: Visit http://localhost:4200.
 
 ### Backend
