@@ -48,7 +48,8 @@ The Employee Management System offers the following features:
    `ng serve`
    ```
    &#x202b;
-4. **Run the application locally**: Visit http://localhost:4200.
+   
+5. **Run the application locally**: Visit http://localhost:4200.
 
 ### Backend
 
@@ -56,15 +57,15 @@ The Employee Management System offers the following features:
 2. **Open Solution File**: Launch in Visual Studio.
 3. **Install Necessary NuGet Packages**.
 4. **Open Package Manager Console**.
-5. **Initialize Database**:
-    Execute
+5. **Initialize Database**:Execute
+6. 
    ```
    `add-migration init`
-   and
    `update-database`
    ```
    &#x202b;
-6. **Build and Run the Backend Application**.
+   
+8. **Build and Run the Backend Application**.
 
 ### Company Management
 
