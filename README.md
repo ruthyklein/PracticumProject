@@ -42,13 +42,13 @@ The Employee Management System offers the following features:
    `npm install`
     ```
    &#x202b;
-4. **Start the Development Server**:
+3. **Start the Development Server**:
    Execute
    ```
    `ng serve`
    ```
    &#x202b;
-5. **Run the application locally**: Visit http://localhost:4200.
+4. **Run the application locally**: Visit http://localhost:4200.
 
 ### Backend
 
@@ -60,15 +60,11 @@ The Employee Management System offers the following features:
     Execute
    ```
    `add-migration init`
+   and
+   `update-database`
    ```
    &#x202b;
-   and 
-   ```
-  `update-database`
-   ```
-   &#x202b;
-   
-8. **Build and Run the Backend Application**.
+6. **Build and Run the Backend Application**.
 
 ### Company Management
 
