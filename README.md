@@ -31,11 +31,13 @@ The Employee Management System offers the following features:
 ## Getting Started
 
 1. Clone the Repository, Run:
-  ```
-    https://github.com/ruthyklein/PracticumProject/edit/main/README.md
-      ```
-   &#x202b;
+    ```
+    `https://github.com/ruthyklein/PracticumProject`
+    ```
+    &#x202b;
+   
 3. Navigate to the Project Directory.
+   
 ### Backend
 
 1. Access Backend Directory: `/EmployeesSever`.
@@ -68,10 +70,10 @@ The Employee Management System offers the following features:
    &#x202b;
    
 5. Run the application locally, Visit:
-   ```
-   http://localhost:4200
     ```
-   &#x202b;
+   `http://localhost:4200`
+    ```
+    &#x202b;
    
 
 ### Company Management
