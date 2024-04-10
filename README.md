@@ -9,10 +9,18 @@ The Employee Management System is designed to streamline employee management pro
 
 If your README is long, add a table of contents to make it easy for users to find what they need.
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
+- [Project Structure](#Project Structure)
+- [Features](#Features)
+- [Technologies Used](#Technologies Used)
+- [Getting Started](#Getting Started)
+- [Company Management](#Company Management)
+- [Notes](#Notes)
+- [Screenshots](#Screenshots)
+- [Contributing](#Contributing)
+- [Credits](#Credits)
+- [Contact](#Contact)
+
+
 ## Project Structure
 
 The project follows a layered architecture model for better organization and maintainability:
@@ -39,9 +47,8 @@ The Employee Management System offers the following features:
 
 1. Clone the Repository, Run:
     ```
-    `https://github.com/ruthyklein/PracticumProject`
+    https://github.com/ruthyklein/PracticumProject
     ```
-    &#x202b;
 2. Navigate to the Project Directory.
    
 ### Backend
@@ -52,11 +59,10 @@ The Employee Management System offers the following features:
 - Open **Package Manager Console**.
 - Initialize Database, Run the following command :
    ```
-   `add-migration init`
+   add-migration init
    
-   `update-database`
+   update-database
    ```
-   &#x202b;
 - Build and Run the Backend Application.
 
 ### Frontend
@@ -64,19 +70,16 @@ The Employee Management System offers the following features:
 - Go to Frontend Directory: `/AngularEmploees`.
 - Install Dependencies, Run:
     ```
-   `npm install`
+   npm install
     ```
-   &#x202b;
 - Start the Development Server, Execute:
    ```
-   `ng serve`
+   ng serve
    ```
-   &#x202b;
 - Run the application locally, Visit:
     ```
-   `http://localhost:4200`
+   http://localhost:4200
     ```
-    &#x202b;
    
 ### Company Management
 
@@ -91,10 +94,6 @@ The Employee Management System offers the following features:
 - Proper data validation and error handling enhance user experience.
 - Deleted employees are logically removed, preserving historical data by changing their status to inactive.
 
-# Deployment
-
-Deploy the application 
-- Components to a public Git repository, with the server-side deployed to Google Cloud Platform or AWS. Set up CI/CD processes 
 
 ## Screenshots
 
