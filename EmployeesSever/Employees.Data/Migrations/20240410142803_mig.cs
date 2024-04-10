@@ -5,7 +5,7 @@
 namespace Employees.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class mig21 : Migration
+    public partial class mig : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

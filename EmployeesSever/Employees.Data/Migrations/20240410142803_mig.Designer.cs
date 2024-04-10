@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Employees.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240320200223_mig3")]
-    partial class mig3
+    [Migration("20240410142803_mig")]
+    partial class mig
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,6 +47,9 @@ namespace Employees.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -70,6 +73,9 @@ namespace Employees.Data.Migrations
                     b.Property<DateTime>("EntryDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsAdministrative")
                         .HasColumnType("bit");
 
@@ -88,8 +94,9 @@ namespace Employees.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Name")
-                        .HasColumnType("int");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -98,8 +105,8 @@ namespace Employees.Data.Migrations
 
             modelBuilder.Entity("Employees.Core.Entities.EmployeePosition", b =>
                 {
-                    b.HasOne("Employees.Core.Entities.Employee", "Employee")
-                        .WithMany("EmployeePositionList")
+                    b.HasOne("Employees.Core.Entities.Employee", null)
+                        .WithMany("PositionList")
                         .HasForeignKey("EmployeeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -110,14 +117,12 @@ namespace Employees.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Employee");
-
                     b.Navigation("Position");
                 });
 
             modelBuilder.Entity("Employees.Core.Entities.Employee", b =>
                 {
-                    b.Navigation("EmployeePositionList");
+                    b.Navigation("PositionList");
                 });
 #pragma warning restore 612, 618
         }
