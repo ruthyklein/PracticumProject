@@ -57,15 +57,15 @@ The Employee Management System offers the following features:
 3. **Install Necessary NuGet Packages**.
 4. **Open Package Manager Console**.
 5. **Initialize Database**:
-Execute
+    Execute
    ```
-`add-migration init`
-```
+   `add-migration init`
+   ```
    &#x202b;
-and 
+   and 
    ```
-`update-database`
-```
+  `update-database`
+   ```
    &#x202b;
    
 8. **Build and Run the Backend Application**.
