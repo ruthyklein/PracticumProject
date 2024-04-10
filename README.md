@@ -30,8 +30,12 @@ The Employee Management System offers the following features:
 
 ## Getting Started
 
-1. **Clone the Repository**: [GitHub](https://github.com/ruthyklein/PracticumProject).
-2. **Navigate to the Project Directory**.
+1. **Clone the Repository**:
+2.  ```
+    https://github.com/ruthyklein/PracticumProject/edit/main/README.md
+      ```
+   &#x202b;
+3. **Navigate to the Project Directory**.
 
 ### Frontend
 
