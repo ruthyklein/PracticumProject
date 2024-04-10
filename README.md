@@ -1,10 +1,10 @@
 # Employee Management System
 
-Welcome to the Employee Management System project! This project aims to provide a comprehensive solution for managing employees within an organization, including features for adding, editing, deleting, and searching employees, as well as managing their roles. The system consists of both a client-side application built with Angular and a server-side application built with .NET .
+Welcome to the Employee Management System project! This project aims to provide a comprehensive solution for managing employees within an organization, including features for adding, editing, deleting, and searching employees, as well as managing their positions. The system consists of both a client-side application built with Angular and a server-side application built with .NET .
 
 ## Project Overview
 
-The Employee Management System is designed to showcase the integration of various learning materials into a practical project, emphasizing quality implementation, code correctness, and systems thinking. By completing this project, you'll not only demonstrate your technical skills but also your ability to combine knowledge from different subjects into a cohesive application.
+The employee management system is designed to present a combination of different learning materials in a practical project while emphasizing quality implementation, code integrity and systemic thinking.
 
 ## Project Structure
 
@@ -14,6 +14,7 @@ The project follows a layered architecture model for better organization and mai
 - **Backend (.NET Core)**: Provides RESTful APIs to interact with the database and manage employee data effectively.
 
 ## Features
+
 The Employee Management System offers the following features:
 - **Employee Table Management**: View, add, edit, and delete employee records.
 - **Position Management**: Dynamically add positions with details.
@@ -54,7 +55,7 @@ The Employee Management System offers the following features:
 - Only employees belonging to the user's company are displayed.
 - A search filter enables displaying employees matching the entered text.
 - Users can download a list of employees to an Excel file, including their data.
-- Components for adding and editing employees allow dynamic role assignment.
+- Components for adding and editing employees allow dynamic position assignment.
 
 ## Notes
 - All fields are mandatory with implemented input validation for data integrity.
@@ -77,9 +78,7 @@ Contributions to the project are welcome! Please follow the established coding s
 
 This project was created as part of a screening practicum. Credits to the contributors involved in its development.
 
-
-
-Thank you for considering the Employee Management System project. We hope it serves as a valuable learning experience and a demonstration of your skills in software development. Good luck!
-
+Thank you for considering the employee management system project. We hope this will serve as a learning experience for you. Successfully!
 Ruth Klein 2024
+
 r0583226266@gmail.com
