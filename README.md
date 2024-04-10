@@ -68,7 +68,7 @@ Deploy the application to a public Git repository, with the server-side deployed
 
 ## Screenshots
 
-![Home Page](src/assets/home_page.png)
+![Home Page](/AngularEmploees/src/assets/home_page.png)
 
 ## Contributing
 
