@@ -1,10 +1,10 @@
 # Employee Management System
 
-Welcome to the Employee Management System project! This project aims to provide a comprehensive solution for managing employees within an organization, including features for adding, editing, deleting, and searching employees, as well as managing their positions. The system consists of both a client-side application built with Angular and a server-side application built with .NET .
+Welcome to the Employee Management System project! This project aims to provide a comprehensive solution for managing employees within an organization, including features for adding, editing, deleting, and searching employees, as well as managing their positions. The system is designed to present a combination of different learning materials in a practical project while emphasizing quality implementation, code integrity, and systemic thinking.
 
 ## Project Overview
 
-The employee management system is designed to present a combination of different learning materials in a practical project while emphasizing quality implementation, code integrity and systemic thinking.
+The Employee Management System is designed to streamline employee management processes within organizations. It aims to solve the challenges of efficiently organizing and maintaining employee data, enhancing productivity, and ensuring data integrity. By adopting a layered architecture model, the project emphasizes better organization and maintainability, enabling seamless scaling and future enhancements.
 
 ## Project Structure
 
@@ -30,45 +30,49 @@ The Employee Management System offers the following features:
 
 ## Getting Started
 
-1. **Clone the Repository**:
-2.  ```
+1. Clone the Repository, Run:
+  ```
     https://github.com/ruthyklein/PracticumProject/edit/main/README.md
       ```
    &#x202b;
-3. **Navigate to the Project Directory**.
-
-### Frontend
-
-1. **Go to Frontend Directory**: `/AngularEmploees`.
-2. **Install Dependencies**:
-   Run
-    ```
-   `npm install`
-    ```
-   &#x202b;
-3. **Start the Development Server**:
-   Execute
-   ```
-   `ng serve`
-   ```
-   &#x202b;
-   
-5. **Run the application locally**: Visit http://localhost:4200.
-
+3. Navigate to the Project Directory.
 ### Backend
 
-1. **Access Backend Directory**: `/EmployeesSever`.
-2. **Open Solution File**: Launch in Visual Studio.
-3. **Install Necessary NuGet Packages**.
-4. **Open Package Manager Console**.
-5. **Initialize Database**:Execute 
+1. Access Backend Directory: `/EmployeesSever`.
+2. Open Solution File: Launch in Visual Studio.
+3. Install Necessary NuGet Packages.
+4. Open Package Manager Console.
+5. Initialize Database, Run the following command :
    ```
    `add-migration init`
    
    `update-database`
    ```
    &#x202b;
-6. **Build and Run the Backend Application**.
+   
+6. Build and Run the Backend Application.
+
+### Frontend
+
+1. Go to Frontend Directory: `/AngularEmploees`.
+2. Install Dependencies, Run:
+    ```
+   `npm install`
+    ```
+   &#x202b;
+
+3. Start the Development Server, Execute:
+   ```
+   `ng serve`
+   ```
+   &#x202b;
+   
+5. Run the application locally, Visit:
+   ```
+   http://localhost:4200
+    ```
+   &#x202b;
+   
 
 ### Company Management
 
@@ -83,9 +87,10 @@ The Employee Management System offers the following features:
 - Proper data validation and error handling enhance user experience.
 - Deleted employees are logically removed, preserving historical data by changing their status to inactive.
 
-## Deployment
+# Deployment
 
-Deploy the application to a public Git repository, with the server-side deployed to Google Cloud Platform or AWS. Set up CI/CD processes to automatically detect codebase changes and deploy updates to the cloud environment.
+Deploy the application 
+- Components to a public Git repository, with the server-side deployed to Google Cloud Platform or AWS. Set up CI/CD processes 
 
 ## Screenshots
 
@@ -97,9 +102,7 @@ Contributions to the project are welcome! Please follow the established coding s
 
 ## Credits
 
-This project was created as part of a screening practicum. Credits to the contributors involved in its development.
+This project was created by Ruth Klein as part of a screening practicum. We would like to acknowledge the valuable contributions of all those involved in its development.
 
-Thank you for considering the employee management system project. We hope this will serve as a learning experience for you. Successfully!
-Ruth Klein 2024
-
-r0583226266@gmail.com
+## Contact:
+For more help or questions, see the project documentation or contact the development team at r0583226266@gmail.com Enjoy using the employee management system!
