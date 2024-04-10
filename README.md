@@ -37,8 +37,13 @@ The Employee Management System offers the following features:
 
 1. **Go to Frontend Directory**: `/AngularEmploees`.
 2. **Install Dependencies**: Run `npm install`.
-3. **Start the Development Server**: Execute `ng serve`.
-4. **Run the application locally**: Visit http://localhost:4200.
+3. **Start the Development Server**:
+4. ```
+Execute
+$ `ng serve`;
+```
+Execute `ng serve`.
+5. **Run the application locally**: Visit http://localhost:4200.
 
 ### Backend
 
