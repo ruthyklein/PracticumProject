@@ -57,15 +57,14 @@ The Employee Management System offers the following features:
 2. **Open Solution File**: Launch in Visual Studio.
 3. **Install Necessary NuGet Packages**.
 4. **Open Package Manager Console**.
-5. **Initialize Database**:Execute
-6. 
+5. **Initialize Database**:Execute 
    ```
    `add-migration init`
+   
    `update-database`
    ```
    &#x202b;
-   
-8. **Build and Run the Backend Application**.
+6. **Build and Run the Backend Application**.
 
 ### Company Management
 
