@@ -14,9 +14,9 @@ The project follows a layered architecture model for better organization and mai
 - **Backend (.NET Core)**: Provides RESTful APIs to interact with the database and manage employee data effectively.
 
 ## Features
-
-- **Employee List Management**: View, add, edit, and delete employee records.
-- **Role Management**: Dynamically add roles with details such as position name, type, and start date.
+The Employee Management System offers the following features:
+- **Employee Table Management**: View, add, edit, and delete employee records.
+- **Position Management**: Dynamically add positions with details.
 - **Search Functionality**: Filter employees based on search criteria.
 - **Export to Excel**: Export employee list to Excel file for download.
 
@@ -26,16 +26,6 @@ The project follows a layered architecture model for better organization and mai
 - **Server-side**: .NET 6
 - **Database**: SQL
 - **Cloud Platform**: Google Cloud Platform or AWS
-
-## Usage
-
-The Employee Management System offers the following features:
-
-- **Employee Management**:
-  - View, add, edit, and delete employee records.
-  - Dynamically assign positions to employees.
-  - Logical deletion of employees by changing their status to inactive.
-- **Export to Excel**: Allows exporting the employee list to an Excel file for further analysis.
 
 ## Getting Started
 
@@ -67,10 +57,7 @@ The Employee Management System offers the following features:
 - Components for adding and editing employees allow dynamic role assignment.
 
 ## Notes
-
-[!NOTE]
-All fields are mandatory with implemented input validation for data integrity.
-
+- All fields are mandatory with implemented input validation for data integrity.
 - Proper data validation and error handling enhance user experience.
 - Deleted employees are logically removed, preserving historical data by changing their status to inactive.
 
@@ -90,11 +77,7 @@ Contributions to the project are welcome! Please follow the established coding s
 
 This project was created as part of a screening practicum. Credits to the contributors involved in its development.
 
-## License
 
-This project is licensed under the [MIT License](LICENSE).
-
----
 
 Thank you for considering the Employee Management System project. We hope it serves as a valuable learning experience and a demonstration of your skills in software development. Good luck!
 
