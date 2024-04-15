@@ -83,7 +83,7 @@ The Employee Management System offers the following features:
    http://localhost:4200
     ```
    
-### Company Management
+## Company Management
 
 - Users are directed to a dashboard focused on the associated company.
 - Only employees belonging to the user's company are displayed.
