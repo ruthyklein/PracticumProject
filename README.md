@@ -1,5 +1,6 @@
 # Employee Management System
-## Table of Contents (Optional)
+Welcome to the Employee Management System project! This project aims to provide a comprehensive solution for managing employees within an organization, including features for adding, editing, deleting, and searching employees, as well as managing their positions. The system is designed to present a combination of different learning materials in a practical project while emphasizing quality implementation, code integrity, and systemic thinking.
+
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -10,15 +11,15 @@
     <li><a href="#getting-started">Getting Started</a></li>
     <li><a href="#company-management">Company Management</a></li>
     <li><a href="#notes">Notes</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
 
   </ol>
 </details>
-Welcome to the Employee Management System project! This project aims to provide a comprehensive solution for managing employees within an organization, including features for adding, editing, deleting, and searching employees, as well as managing their positions. The system is designed to present a combination of different learning materials in a practical project while emphasizing quality implementation, code integrity, and systemic thinking.
-![Home Page](/AngularEmploees/src/assets/home_page.png)
 
 ## About The Project
+
+
+![Home Page](/AngularEmploees/src/assets/home_page.png)
 
 The Employee Management System is designed to streamline employee management processes within organizations. It aims to solve the challenges of efficiently organizing and maintaining employee data, enhancing productivity, and ensuring data integrity. By adopting a layered architecture model, the project emphasizes better organization and maintainability, enabling seamless scaling and future enhancements.
 
@@ -26,7 +27,6 @@ The Employee Management System is designed to streamline employee management pro
 ## Project Structure
 
 The project follows a layered architecture model for better organization and maintainability:
-
 - **Frontend (Angular 17)**: Implements user interface features for efficient employee management.
 - **Backend (.NET Core)**: Provides RESTful APIs to interact with the database and manage employee data effectively.
 
@@ -96,11 +96,6 @@ The Employee Management System offers the following features:
 - Proper data validation and error handling enhance user experience.
 - Deleted employees are logically removed, preserving historical data by changing their status to inactive.
 
-
-
-## Contributing
-
-Contributions to the project are welcome! Please follow the established coding standards and guidelines. Fork the repository, make your changes, and submit a pull request.
 
 ## Credits
 
