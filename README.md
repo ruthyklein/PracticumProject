@@ -1,6 +1,5 @@
 # Employee Management System
 ## Table of Contents (Optional)
-<!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -17,6 +16,7 @@
   </ol>
 </details>
 Welcome to the Employee Management System project! This project aims to provide a comprehensive solution for managing employees within an organization, including features for adding, editing, deleting, and searching employees, as well as managing their positions. The system is designed to present a combination of different learning materials in a practical project while emphasizing quality implementation, code integrity, and systemic thinking.
+![Home Page](/AngularEmploees/src/assets/home_page.png)
 
 ## About The Project
 
@@ -97,7 +97,6 @@ The Employee Management System offers the following features:
 - Deleted employees are logically removed, preserving historical data by changing their status to inactive.
 
 
-![Home Page](/AngularEmploees/src/assets/home_page.png)
 
 ## Contributing
 
