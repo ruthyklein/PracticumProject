@@ -1,24 +1,26 @@
 # Employee Management System
+## Table of Contents (Optional)
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li> <a href="#project-structure">Project Structure</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#technologies-used">Technologies Used</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#company-management">Company Management</a></li>
+    <li><a href="#notes">Notes</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#contact">Contact</a></li>
 
+  </ol>
+</details>
 Welcome to the Employee Management System project! This project aims to provide a comprehensive solution for managing employees within an organization, including features for adding, editing, deleting, and searching employees, as well as managing their positions. The system is designed to present a combination of different learning materials in a practical project while emphasizing quality implementation, code integrity, and systemic thinking.
 
-## Project Overview
+## About The Project
 
 The Employee Management System is designed to streamline employee management processes within organizations. It aims to solve the challenges of efficiently organizing and maintaining employee data, enhancing productivity, and ensuring data integrity. By adopting a layered architecture model, the project emphasizes better organization and maintainability, enabling seamless scaling and future enhancements.
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Project Structure](#Project Structure)
-- [Features](#Features)
-- [Technologies Used](#Technologies Used)
-- [Getting Started](#Getting Started)
-- [Company Management](#Company Management)
-- [Notes](#Notes)
-- [Screenshots](#Screenshots)
-- [Contributing](#Contributing)
-- [Credits](#Credits)
-- [Contact](#Contact)
 
 
 ## Project Structure
@@ -94,8 +96,6 @@ The Employee Management System offers the following features:
 - Proper data validation and error handling enhance user experience.
 - Deleted employees are logically removed, preserving historical data by changing their status to inactive.
 
-
-## Screenshots
 
 ![Home Page](/AngularEmploees/src/assets/home_page.png)
 
