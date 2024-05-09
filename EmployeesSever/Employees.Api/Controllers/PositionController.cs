@@ -23,7 +23,6 @@ namespace Employees.Api.Controllers
             _mapper = mapper;
         }
 
-        //GET: api/<AppointmentController>
         [HttpGet]
         public async Task<IActionResult> Get()
         {
@@ -31,7 +30,6 @@ namespace Employees.Api.Controllers
             return Ok(_mapper.Map<IEnumerable<PositionDto>>(position));
         }
 
-        // GET api/<AppointmentController>/5
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
@@ -39,21 +37,12 @@ namespace Employees.Api.Controllers
             return Ok(_mapper.Map<PositionDto>(position));
         }
 
-        // POST api/<AppointmentController>
         [HttpPost]
-        //public async Task<ActionResult> Post([FromBody] PositionPostModel positionPostModel)
-        //{
-        //   // Gender enumValue = Enum.Parse<Gender>(positionPostModel..ToString());
-        //    var newPosition = await _positionService.AddPositionAsync(_mapper.Map<Position>(positionPostModel));
-            
-        //    return Ok(_mapper.Map<PositionDto>(newPosition));
-        //}
         public async Task<ActionResult> Post([FromBody] PositionPostModel model)
         {
             var newPosition = await _positionService.AddPositionAsync(_mapper.Map<Position>(model));
             return Ok(_mapper.Map<PositionDto>(newPosition));
         }
-        // PUT api/<ProductsController>/5
         [HttpPut("{id}")]
         public async Task<ActionResult> Put(int id, [FromBody] PositionPostModel positionPostModel)
         {
@@ -68,7 +57,6 @@ namespace Employees.Api.Controllers
             return Ok(_mapper.Map<PositionDto>(newPosition));
         }
 
-        // DELETE api/<AppointmentController>/5
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {

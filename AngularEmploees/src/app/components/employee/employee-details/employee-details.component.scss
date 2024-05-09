@@ -1,0 +1,40 @@
+.employee-card {
+    width: 400px;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.employee-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.employee-id {
+    margin-bottom: 10px;
+}
+
+.employee-details {
+    margin-bottom: 5px;
+}
+
+.mat-expansion-panel-header {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+}
+
+.mat-expansion-panel-header.mat-expanded {
+    background-color: #e0e0e0;
+}
+///
+/// 
+.example-card {
+  max-width: 400px;
+  margin-bottom: 8px;
+}

@@ -21,6 +21,7 @@ import { DeleteEmployeeComponent } from '../delete-employee/delete-employee.comp
 import { EditEmployeeComponent } from '../edit-employee/edit-employee.component';
 import { Employee } from '../../../models/employee.model';
 import { EmployeeService } from '../../../services/employee.service';
+import { EmployeeDetailsComponent } from '../employee-details/employee-details.component';
 
 @Component({
   selector: 'app-employees-table',
@@ -50,7 +51,7 @@ import { EmployeeService } from '../../../services/employee.service';
 })
 
 export class EmployeesTableComponent implements AfterViewInit {
-  displayedColumns: string[] = ['idNumber', 'firstName', 'lastName', 'startOfWorkDate', 'actions'];
+  displayedColumns: string[] = ['more','idNumber', 'firstName', 'lastName', 'startOfWorkDate', 'actions'];
   dataSource!: MatTableDataSource<Employee>;
   expandedElement: Employee | null = null;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -105,7 +106,13 @@ export class EmployeesTableComponent implements AfterViewInit {
       this.getEmployees();
     });
   }
+  openEmployeeDetailsDialog(employee: Employee): void {
+    const dialogRef = this.dialog.open(EmployeeDetailsComponent, {
+      data: { employee },
+    });  
+    
+  }
   expandedRows: { [key: number]: boolean } = {};
 
-
+ 
 }

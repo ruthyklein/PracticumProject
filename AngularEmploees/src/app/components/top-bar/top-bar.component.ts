@@ -52,7 +52,7 @@ export class TopBarComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getEmployees(); // Fetch employees on component initialization
+    this.getEmployees(); 
   }
 
   toggleSidebar() {
@@ -103,6 +103,11 @@ onMouseLeave(event: MouseEvent) {
     button.classList.add('normal-state');
 }
   
-
-  
+ printTable() {
+  const originalContent = document.body.innerHTML;
+  const printContent = document.querySelector('.table-container').innerHTML;
+  document.body.innerHTML = printContent;
+  window.print();
+  document.body.innerHTML = originalContent;
+}
 }

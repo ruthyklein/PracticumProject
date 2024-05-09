@@ -2,14 +2,12 @@
   <h2>Edit Employee</h2>
   <form [formGroup]="employeeForm" (ngSubmit)="submit()">
     <mat-dialog-content>
-      <!-- ID Number -->
       <mat-form-field>
         <mat-label>ID Number</mat-label>
         <input matInput formControlName="idNumber" placeholder="Enter ID Number">
         <mat-error *ngIf="employeeForm.get('idNumber').hasError('required')">ID Number is required</mat-error>
         <mat-error *ngIf="employeeForm.get('idNumber').hasError('pattern')">ID Number must contain 9 digits</mat-error>
       </mat-form-field>
-      <!-- First Name -->
       <mat-form-field>
         <mat-label>First Name</mat-label>
         <input matInput formControlName="firstName" placeholder="Enter First Name">
@@ -17,7 +15,6 @@
         <mat-error *ngIf="employeeForm.get('firstName').hasError('pattern')">First Name must contain only letters and
           have minimum length of 2</mat-error>
       </mat-form-field>
-      <!-- Last Name -->
       <mat-form-field>
         <mat-label>Last Name</mat-label>
         <input matInput formControlName="lastName" placeholder="Enter Last Name">
@@ -25,7 +22,6 @@
         <mat-error *ngIf="employeeForm.get('lastName').hasError('pattern')">Last Name must contain only letters and have
           minimum length of 2</mat-error>
       </mat-form-field>
-      <!-- Gender -->
       <mat-form-field>
         <mat-label>Gender</mat-label>
         <mat-select formControlName="gender" placeholder="Select Gender">
@@ -34,7 +30,6 @@
         </mat-select>
         <mat-error *ngIf="employeeForm.get('gender').hasError('required')">Gender is required</mat-error>
       </mat-form-field>
-      <!-- Date of Birth -->
       <mat-form-field>
         <mat-label>Date of Birth</mat-label>
         <input matInput [matDatepicker]="dateOfBirth" formControlName="dateOfBirth" placeholder="Enter Date of Birth">
@@ -44,7 +39,6 @@
         <mat-error *ngIf="employeeForm.get('dateOfBirth').hasError('overAge')">Employee must be over 18 years
           old</mat-error>
       </mat-form-field>
-      <!-- Start of Work Date -->
       <mat-form-field>
         <mat-label>Start of Work Date</mat-label>
         <input matInput [matDatepicker]="startOfWorkDate" formControlName="startOfWorkDate"

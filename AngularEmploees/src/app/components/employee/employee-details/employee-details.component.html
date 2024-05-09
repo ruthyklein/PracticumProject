@@ -1,0 +1,36 @@
+<mat-card class="employee-card">
+    <button mat-icon-button class="close-button" (click)="closeDialog()" aria-label="Close">
+        <mat-icon>close</mat-icon>
+    </button>
+    <br>
+    <mat-card-header>
+        <mat-card-title-group>
+            <mat-card-title class="employee-name">{{ data.employee.firstName }} {{ data.employee.lastName
+                }}</mat-card-title>
+            <mat-card-subtitle>ID Number: {{ data.employee.idNumber }}</mat-card-subtitle>
+            <img mat-card-lg-image src="assets/employee.jpg" alt="Photo of employee">
+        </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+        <p class="employee-details"><strong>Gender:</strong> {{ data.employee.gender }}</p>
+        <p class="employee-details"><strong>Date of Birth:</strong> {{ data.employee.dateOfBirth |date: 'dd/MM/yyyy' }}
+        </p>
+        <p class="employee-details"><strong>Start of Work Date:</strong> {{ data.employee.startOfWorkDate |date:
+            'dd/MM/yyyy'}}</p>
+
+        <div *ngIf="data.employee.positionList.length > 0">
+            <h3><b>Positions:</b></h3>
+            <mat-accordion>
+                <mat-expansion-panel *ngFor="let position of data.employee.positionList">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{ position.position.name }}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p><strong>Administrative:</strong> {{ position.isAdministrative ? 'Yes' : 'No' }}</p>
+                    <p><strong>Entry Date:</strong> {{ position.entryDate |date: 'dd/MM/yyyy' }}</p>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </mat-card-content>
+</mat-card>

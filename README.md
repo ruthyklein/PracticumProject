@@ -1,4 +1,4 @@
-# Employee Management System
+# Employee Management Application
 Welcome to the Employee Management System project! This project aims to provide a comprehensive solution for managing employees within an organization, including features for adding, editing, deleting, and searching employees, as well as managing their positions. The system is designed to present a combination of different learning materials in a practical project while emphasizing quality implementation, code integrity, and systemic thinking.
 
 <details>
@@ -20,6 +20,7 @@ Welcome to the Employee Management System project! This project aims to provide 
 
 
 ![Home Page](/AngularEmploees/src/assets/home_page.png)
+![Home Page](/AngularEmploees/src/assets/side_bar.png)
 
 The Employee Management System is designed to streamline employee management processes within organizations. It aims to solve the challenges of efficiently organizing and maintaining employee data, enhancing productivity, and ensuring data integrity. By adopting a layered architecture model, the project emphasizes better organization and maintainability, enabling seamless scaling and future enhancements.
 

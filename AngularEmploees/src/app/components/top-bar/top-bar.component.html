@@ -5,33 +5,16 @@
     </button>
     <span class="logo">Employee Management App</span>
     <span class="example-spacer"></span>
-    <div class="centered-button-group">
-        <button mat-icon-button matTooltip="Add Employee" class="example-icon favorite-icon" aria-label="Add Employee"
-            (click)="openAddDialog()">
-            <mat-icon>person_add</mat-icon>
+    <div class="example-button-row">
+        <button mat-fab extended color="primary" (click)="printTable()">
+            <mat-icon>print</mat-icon>
+            Print The Table
         </button>
-        <button mat-icon-button matTooltip="Export To Excel" class="example-icon" aria-label="exportToExcel"
-            (click)="exportToExcel()">
+        <button mat-fab extended color="primary" (click)="exportToExcel()">
             <mat-icon>file_download</mat-icon>
-        </button>
-        <button mat-icon-button matTooltip="All Positions" class="example-icon favorite-icon"
-            aria-label="Employee List button" (click)="openPositionCardsDialog()">
-            <mat-icon>list_alt</mat-icon>
-        </button>
-        <button mat-icon-button matTooltip="Add Position" class="example-icon favorite-icon"
-            aria-label="Employee List button" (click)="openPositionCardsDialog()">
-            <mat-icon>group_add</mat-icon>
+            Export To Excel
         </button>
     </div>
-    <a href="https://github.com/ruthyklein/PracticumProject" target="_blank">
-        <button mat-fab extended color="primary">
-            <mat-icon>
-                <i class="fa-brands fa-github " style="color: #ffffff; font-size: 25px;">
-                </i>
-            </mat-icon>
-            GitHub
-        </button>
-    </a>
 </mat-toolbar>
 <mat-sidenav-container class="example-container">
     <mat-sidenav #sidenav mode="side" [opened]="isMenuOpened" class="sidenav">
@@ -46,11 +29,6 @@
         <button mat-menu-item color="primary" (click)="openAddPositionDialog()" class="menu-button">
             <mat-icon> group_add</mat-icon>
             <span>Add Position</span>
-        </button>
-        <mat-divider></mat-divider>
-        <button mat-menu-item color="primary" (click)="exportToExcel()" class="menu-button">
-            <mat-icon>file_download</mat-icon>
-            <span>Export To Excel</span>
         </button>
         <mat-divider></mat-divider>
         <button mat-menu-item color="primary" (click)="openPositionCardsDialog()" class="menu-button">
