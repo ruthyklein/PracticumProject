@@ -20,7 +20,7 @@ Welcome to the Employee Management System project! This project aims to provide 
 
 
 ![Home Page](/AngularEmploees/src/assets/home_page.png)
-![Home Page](/AngularEmploees/src/assets/side_bar.png)
+![Home Page](/AngularEmploees/src/assets/home_page2.png)
 
 The Employee Management System is designed to streamline employee management processes within organizations. It aims to solve the challenges of efficiently organizing and maintaining employee data, enhancing productivity, and ensuring data integrity. By adopting a layered architecture model, the project emphasizes better organization and maintainability, enabling seamless scaling and future enhancements.
 
@@ -28,8 +28,8 @@ The Employee Management System is designed to streamline employee management pro
 ## Project Structure
 
 The project follows a layered architecture model for better organization and maintainability:
-- **Frontend (Angular 17)**: Implements user interface features for efficient employee management.
-- **Backend (.NET Core)**: Provides RESTful APIs to interact with the database and manage employee data effectively.
+- **Frontend ( Angular )**: Implements user interface features for efficient employee management.
+- **Backend (.NET Core )**: Provides RESTful APIs to interact with the database and manage employee data effectively.
 
 ## Features
 
@@ -41,10 +41,10 @@ The Employee Management System offers the following features:
 
 ## Technologies Used
 
-- **Client-side**: Angular
-- **Server-side**: .NET 
+- **Client-side**: Angular 17
+- **Server-side**: .NET 8
 - **Database**: SQL Server
-- **Cloud Platform**: Google Cloud Platform or AWS
+- **Cloud Platform**: Google Cloud 
 
 ## Getting Started
 
