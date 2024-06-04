@@ -21,7 +21,6 @@ Welcome to the Employee Management System project! This project aims to provide 
 ## About The Project
 
 
-![Home Page](/AngularEmploees/src/assets/home_page.png)
 ![Home Page](/AngularEmploees/src/assets/home_page2.png)
 
 The Employee Management System is designed to streamline employee management processes within organizations. It aims to solve the challenges of efficiently organizing and maintaining employee data, enhancing productivity, and ensuring data integrity. By adopting a layered architecture model, the project emphasizes better organization and maintainability, enabling seamless scaling and future enhancements.
@@ -47,6 +46,7 @@ The Employee Management System offers the following features:
 - **Server-side**: .NET 8
 - **Database**: SQL Server
 - **Cloud Platform**: Google Cloud 
+![Home Page](/AngularEmploees/src/assets/employeeDetails.png)
 
 ## Getting Started
 
