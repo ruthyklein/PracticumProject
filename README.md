@@ -46,7 +46,7 @@ The Employee Management System offers the following features:
 - **Server-side**: .NET 8
 - **Database**: SQL Server
 - **Cloud Platform**: Google Cloud 
-![Home Page](/AngularEmploees/src/assets/employeeDetails.png)
+![Home Page](/AngularEmploees/src/assets/employeeDetails.jpg.png)
 
 ## Getting Started
 
